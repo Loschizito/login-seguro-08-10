@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:fragment="head(titulo)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo} + ' | ' + ${nomeSistema}">Login Seguro</title>
+    <link rel="stylesheet" th:href="@{/temas/{t}/style.css(t=${tema})}">
+</head>
+
+<body>
+
+<header th:fragment="menu" class="menu">
+    <a th:href="@{/}" class="logo" th:text="${nomeSistema}">Login Seguro</a>
+    <nav>
+        <a sec:authorize="!isAuthenticated()" th:href="@{/login}">Entrar</a>
+        <a sec:authorize="!isAuthenticated()" th:href="@{/cadastro}">Cadastrar</a>
+        <a sec:authorize="isAuthenticated()" th:href="@{/painel}">Painel</a>
+        <a sec:authorize="hasAnyRole('ADMIN', 'MODERADOR')" th:href="@{/moderador}">Moderação</a>
+        <a sec:authorize="hasRole('ADMIN')" th:href="@{/admin}">Admin</a>
+        <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post" class="form-sair">
+            <button type="submit">Sair</button>
+        </form>
+    </nav>
+</header>
+
+
+</body>
+</html>

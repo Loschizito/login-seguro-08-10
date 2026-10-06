@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head('Painel')}"></head>
+<body>
+<header th:replace="~{layout :: menu}"></header>
+
+<main class="container">
+    <h1 th:text="'Olá, ' + ${usuario.nome}">Olá</h1>
+    <p>E-mail: <strong th:text="${usuario.email}"></strong></p>
+    <p>Perfil: <span class="etiqueta" th:text="${usuario.role}"></span></p>
+</main>
+
+</body>
+</html>

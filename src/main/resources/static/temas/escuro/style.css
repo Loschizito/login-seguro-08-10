@@ -1,0 +1,153 @@
+:root {
+    --fundo: #121212;
+    --superficie: #1e1e1e;
+    --texto: #eeeeee;
+    --primaria: #8ab4f8;
+    --borda: #333333;
+    --erro: #c0392b;
+    --sucesso: #27ae60;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+a {
+    color: var(--primaria);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background: var(--superficie);
+    border-bottom: 1px solid var(--borda);
+}
+
+.menu nav {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.form-sair {
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+.cartao {
+    max-width: 400px;
+    background: var(--superficie);
+    padding: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+button, .botao {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background: var(--primaria);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu button {
+    margin-top: 0;
+}
+
+.botao.secundario {
+    background: transparent;
+    color: var(--primaria);
+    border: 1px solid var(--primaria);
+}
+
+.alerta {
+    padding: 8px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.alerta.erro {
+    background: var(--erro);
+}
+
+.alerta.sucesso {
+    background: var(--sucesso);
+}
+
+.campo-erro {
+    color: var(--erro);
+    font-size: 14px;
+}
+
+.etiqueta {
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--primaria);
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--superficie);
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid var(--borda);
+    text-align: left;
+}
+
+.form-linha {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 0;
+}
+
+.form-linha select {
+    margin-top: 0;
+}
+
+.form-linha button {
+    margin-top: 0;
+}
+

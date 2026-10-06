@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head('Moderação')}"></head>
+<body>
+<header th:replace="~{layout :: menu}"></header>
+
+<main class="container">
+    <h1>Moderação</h1>
+    <p>Lista de usuários cadastrados (somente leitura).</p>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Perfil</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="u : ${usuarios}">
+            <td th:text="${u.nome}"></td>
+            <td th:text="${u.email}"></td>
+            <td th:text="${u.role}"></td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+</body>
+</html>
